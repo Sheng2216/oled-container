@@ -7,7 +7,6 @@ adafruit-circuitpython-typing==1.8.3
 Adafruit-PlatformDetect==3.40.3
 Adafruit-PureIO==1.1.10
 netifaces==0.11.0
-#netifaces
 Pillow==9.0.1
 psutil==5.9.0
 pyftdi==0.54.0

@@ -18,7 +18,9 @@ COPY --from=builder /wheels /wheels
 # Copy files from host
 COPY requirements.txt oled ./
 COPY fonts ./usr/share/fonts
-RUN addgroup -gid 997 gpio && usermod -a -G gpio root
+
+RUN groupadd -g 997 gpio
+RUN usermod -a -G video,gpio root
 # Install the packages
 RUN apt-get update \
     && apt-get install -y docker.io\
