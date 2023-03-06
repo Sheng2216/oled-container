@@ -84,7 +84,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          platforms: linux/arm64,linux/arm/v7
+          platforms: linux/arm64
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}  
           labels: ${{ steps.meta.outputs.labels }}
