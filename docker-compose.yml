@@ -2,7 +2,7 @@ version: '3.3'
 services:
 
   oled-container:
-    image: oled-container-oled-container:latest
+    image: sheng2216/oled-rakwireless:0.1
 #   build:
 #     context: ./
 #     dockerfile: Dockerfile
