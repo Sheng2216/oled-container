@@ -7,22 +7,20 @@ services:
 #     context: ./
 #     dockerfile: Dockerfile
     container_name: oled
-#    devices:
-#      - "/dev/i2c-1"
-#      - "/dev/gpiochip0:/dev/gpiochip0"
     group_add:
       - "997"
       - "44"
-#   privileged: true
     restart: unless-stopped
     devices:
-      - "/dev/gpiochip0:/dev/gpiochip0"
-      - "/dev/i2c-1:/dev/i2c-1"
+      - /dev/i2c-1
       - /dev/vchiq
+      - /dev/mem
+      - /dev/gpiomem
     volumes:
-      - '/dev/gpiomem:/dev/gpiomem'
-      - '/dev/mem:/dev/mem'
-      - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/etc/os-release:/etc/os-release'
+      - /sys/class/gpio:/sys/class/gpio
+      - /sys/devices:/sys/devices
+      - /etc/udev/rules.d:/etc/udev/rules.d
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/os-release:/etc/os-release
     network_mode: host
 
